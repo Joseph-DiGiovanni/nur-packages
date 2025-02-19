@@ -10,6 +10,7 @@
         pkgs = import nixpkgs { inherit system; };
       });
 
+      overlays.default = import ./overlay.nix;
       packages = forAllSystems (system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system});
     };
 }
