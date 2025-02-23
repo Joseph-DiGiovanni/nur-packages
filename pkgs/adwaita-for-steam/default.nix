@@ -6,14 +6,14 @@ let
   importCustomCSS = if customCss != null then "cp -rf ${customCss} ./custom/custom.css" else "rm ./custom/custom.css";
 in
 stdenvNoCC.mkDerivation rec {
-  name = "adwaita-for-steam";
-  version = "3.2";
+  pname = "adwaita-for-steam";
+  version = "3.3";
 
   src = fetchFromGitHub {
     owner = "tkashkin";
     repo = "Adwaita-for-Steam";
     rev = "${version}";
-    hash = "sha256-HazghdJqPklGMEI39G9bhkEqdkJo1I54qBu0dn9BPjk=";
+    hash = "sha256-oQq+wgsplng+ti+/36a4krMC8dO/UhOlcqWlvShK2s0=";
   };
 
   preferLocalBuild = true;
